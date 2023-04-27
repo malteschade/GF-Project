@@ -19,10 +19,10 @@ def multi_solve(input):
     s = input[1]
 
     if type(s['completed']) == str:
-        print(f'Skipping solved row: {input[0]}')
+        print(f'Skipping solved row: {input[0]+2}')
         return
     
-    print(f'Starting thread for row: {input[0]}')
+    print(f'Starting thread for row: {input[0]+2}')
     lnk = Perm2D(s['mean_lnk'], s['variance_lnk'], s['dx'], s['correlation_length'], s['random_seed'])
     
     solver = RWPT_solver()
@@ -41,7 +41,7 @@ def multi_solve(input):
     pos_x, pos_y, label = solver.solve()
     np.savez_compressed(f'{OUTPUT_PATH}index_{s["index"]+2}', pos_x=pos_x, pos_y=pos_y, label=label)
     
-    print(f'Finishing thread for row: {input[0]}')
+    print(f'Finishing thread for row: {input[0]+2}')
     
 
 if __name__ == '__main__':
