@@ -165,4 +165,5 @@ geofluids.py
 config.xlsx
 output/*
 archieve/*
+.DS_STORE
 ```
