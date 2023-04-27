@@ -39,7 +39,7 @@ def multi_solve(input):
     solver.set_initial_particle_position()
     
     pos_x, pos_y, label = solver.solve()
-    np.savez_compressed(f'{OUTPUT_PATH}index_{s["index"]+1}', pos_x=pos_x, pos_y=pos_y, label=label)
+    np.savez_compressed(f'{OUTPUT_PATH}index_{s["index"]+2}', pos_x=pos_x, pos_y=pos_y, label=label)
     
     print(f'Finishing thread for row: {input[0]}')
     
