@@ -9,7 +9,7 @@ import pandas as pd
 
 SHEET_ID = '1jU6eor_WTvCt3tLzQbysIg0AH-8zRwek_B0aUV76O1k'
 SHEET_NAME = 'Parameters'
-OUTPUT_PATH = 'output/'
+OUTPUT_PATH = 'output/02_blue/'
 
 def load_setup():
     url = f'https://docs.google.com/spreadsheets/d/{SHEET_ID}/gviz/tq?tqx=out:csv&sheet={SHEET_NAME}'

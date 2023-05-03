@@ -165,5 +165,6 @@ geofluids.py
 config.xlsx
 output/*
 archieve/*
+images/*
 .DS_STORE
 ```
