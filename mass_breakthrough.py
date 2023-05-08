@@ -7,10 +7,10 @@ from multiprocessing import Pool
 import numpy as np
 import pandas as pd
 
-N_SEED = 32
+N_SEED = 96
 
-IMIN = 1
-IMAX = 2
+IMIN = 3
+IMAX = 6
 
 XMIN = 199
 XMAX = 201
