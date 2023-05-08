@@ -5,6 +5,7 @@ import time
 from multiprocessing import Pool
 
 import numpy as np
+import numpy.ma as ma
 import pandas as pd
 
 N_SEED = 96
@@ -45,10 +46,9 @@ def multi_solve(input):
     mask = pos_x_mask & pos_y_mask
     
     c = np.zeros((int(s['t_steps']/s['save_interval'])+1, 3))
-    for i in range(len(label)):
-        c[i, 0] = np.count_nonzero(label[i][mask[i]] == s['species_1'])
-        c[i, 1] = np.count_nonzero(label[i][mask[i]] == s['species_2'])
-        c[i, 2] = np.count_nonzero(label[i][mask[i]] == s['species_3'])
+    c[:,0] = ma.count_masked(ma.masked_array(label, mask=mask&(label==s['species_1'])), axis=1)
+    c[:,1] = ma.count_masked(ma.masked_array(label, mask=mask&(label==s['species_2'])), axis=1)
+    c[:,2] = ma.count_masked(ma.masked_array(label, mask=mask&(label==s['species_3'])), axis=1)
         
     print(f'Finishing thread for seed: {input[0]}')
     return c
