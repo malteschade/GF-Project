@@ -169,4 +169,5 @@ images/*
 .DS_STORE
 bt_data/*
 param_table.xlsx
+report/*
 ```
